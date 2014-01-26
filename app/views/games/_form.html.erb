@@ -1,0 +1,14 @@
+<%= simple_form_for(@game) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :time1 %>
+  <%= f.input :time2 %>
+  <%= f.input :score1 %>
+  <%= f.input :score2 %>
+  <%= f.input :user_id %>
+  <%= f.input :numeroDoJogo %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
