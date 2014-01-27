@@ -1,4 +1,8 @@
 <p>
-  <%= f.input_field :score1%>
-  <%= f.input_field :score2%>
+
+	<%= current_user.games.find($contador).time1 %>
+  		<%= f.input_field :score1%>
+  		<%= f.input_field :score2%>
+  	<%= current_user.games.find($contador).time2 %>
+  	<%= $contador = $contador + 1 %>
 </p>
