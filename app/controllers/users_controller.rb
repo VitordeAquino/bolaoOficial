@@ -7,17 +7,21 @@ class UsersController < ApplicationController
 	end
 
 	def new
-    @game = Game.new
+    @user = User.new
   end
 
 	def show
 	end
 
+  def palpite
+    @games = User.find(current_user).games
+  end
+
 	def edit
 	end
 
 	def create
-    @user = User.new(game_params)
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -33,7 +37,7 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to palpite_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -43,8 +47,8 @@ class UsersController < ApplicationController
   end
 
 def set_user
-      @user = User.find(current_user)
-    end
+  @user = User.find(current_user)
+end
 
 def user_params
   params.require(:user).permit(games_attributes: [:id, :score1, :score2, :_destroy])

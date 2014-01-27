@@ -1,0 +1,28 @@
+<h1>Listing games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Time2</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.time1 %></td>
+        <td><%= game.score1 %></td>
+        <td>X</td>
+        <td><%= game.score2 %></td>
+        <td><%= game.time2 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit Games', edit_user_path(current_user) %>
+<br>
