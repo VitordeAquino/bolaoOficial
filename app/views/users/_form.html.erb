@@ -1,0 +1,11 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.fields_for :games do |builder| %>
+    <%= render "game_fields", :f => builder %>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'devise'
 
 gem 'simple_form'
-gem "cocoon"
 
 
 # Use SCSS for stylesheets

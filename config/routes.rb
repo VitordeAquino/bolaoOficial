@@ -3,6 +3,8 @@ BolaoOficial::Application.routes.draw do
 
   devise_for :users
 
+  resources :users
+
 
   root :to => "games#index"
   # The priority is based upon order of creation: first created -> highest priority.

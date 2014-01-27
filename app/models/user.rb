@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :games
-  
+  accepts_nested_attributes_for :games
  end
 
