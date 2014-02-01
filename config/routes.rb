@@ -6,7 +6,8 @@ BolaoOficial::Application.routes.draw do
   resources :users
 
   get 'palpite', to: 'users#palpite'
-
+  get 'atualizarPontos', to: 'users#atualizarPontos'
+  get 'atualizarTodosUsers', to: 'users#atualizarTodosUsers'
 
   root :to => "users#index"
   # The priority is based upon order of creation: first created -> highest priority.
