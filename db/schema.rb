@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20140130185940) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
-    t.datetime "updated_at"              
-    t.integer  "pontos"                  default: 0
+    t.datetime "updated_at"
+    t.integer  "pontos"
     t.boolean  "admin",                  default: false
   end
 

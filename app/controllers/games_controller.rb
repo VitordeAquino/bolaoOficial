@@ -38,11 +38,39 @@ class GamesController < ApplicationController
     end
   end
 
+  def atualizar_pontos(numeroDoJogo)
+   @users = User.all
+    @users.each do |user|
+      if current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score1 && current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+        user.pontos=3
+        user.save
+      elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+        if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+          user.pontos=1
+          user.save
+        end
+      elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+        if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+          user.pontos=1
+          user.save
+        end
+      else
+        if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
+          user.pontos=1
+          user.save
+        end
+      end
+    end
+  end
+
   # PATCH/PUT /games/1
   # PATCH/PUT /games/1.json
   def update
     respond_to do |format|
       if @game.update(game_params)
+        if current_user.admin?
+          atualizar_pontos(@game.numeroDoJogo)
+        end
         format.html { redirect_to @game, notice: 'Game was successfully updated.' }
         format.json { head :no_content }
       else
