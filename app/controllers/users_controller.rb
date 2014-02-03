@@ -9,6 +9,46 @@ class UsersController < ApplicationController
 	def show
 	end
 
+  def atualizarPontos
+    contadorWhile = 0
+    while  contadorWhile <= 6 do
+     
+      userScore1 = current_user.games.find_by_numeroDoJogo(contadorWhile).score1
+      userScore2 = current_user.games.find_by_numeroDoJogo(contadorWhile).score2
+      tabelaScore1 = User.find_by_email("vitordeaquino@gmail.com").games.find_by_numeroDoJogo(contadorWhile).score1
+      tabelaScore2 = User.find_by_email("vitordeaquino@gmail.com").games.find_by_numeroDoJogo(contadorWhile).score2
+      
+      if userScore1 > userScore2
+        if tabelaScore1 > tabelaScore1
+          current_user.pontos = current_user.pontos + 1
+        end
+  
+
+      elsif userScore1 < userScore2
+        if tabelaScore1 < tabelaScore1
+          current_user.pontos = current_user.pontos + 1
+        end
+
+      elsif userScore1 < userScore2
+        if tabelaScore1 < tabelaScore1
+          current_user.pontos = current_user.pontos + 1
+        end
+      end
+
+      if userScore1 == tabelaScore1 && userScore2 == tabelaScore2
+        current_user.pontos = current_user.pontos + 2
+      end
+      contadorWhile = contadorWhile + 1 
+    end
+    current_user.update
+  end
+
+  def atualizarTodosUsers
+    current_user.pontos = 6
+    current_user.update
+  end
+
+
   def palpite
     @games = User.find(current_user).games
   end
@@ -28,12 +68,12 @@ class UsersController < ApplicationController
     end
   end
 
-def set_user
+  def set_user
   @user = User.find(current_user)
-end
+  end
 
-def user_params
-  params.require(:user).permit(games_attributes: [:id, :score1, :score2, :_destroy])
-end
+  def user_params
+  params.require(:user).permit(games_attributes: [:id, :score1, :score2, :_destroy,])
+  end
 
 end
