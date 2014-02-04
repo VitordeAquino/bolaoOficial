@@ -1,8 +1,9 @@
 <p>
-	
 	<%= current_user.games.find_by_numeroDoJogo($contador).time1 %>
+	<%= image_tag src="/images/#{current_user.games.find_by_numeroDoJogo($contador).time1}.png"%>
   		<%= f.input_field :score1%>
   		<%= f.input_field :score2%>
+  <%= image_tag src="/images/#{current_user.games.find_by_numeroDoJogo($contador).time2}.png" %>		
 	<%= current_user.games.find_by_numeroDoJogo($contador).time2 %>
 	<% $contador += 1 %>	
 

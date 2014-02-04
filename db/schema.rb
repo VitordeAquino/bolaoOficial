@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130185940) do
+ActiveRecord::Schema.define(version: 20140204183519) do
 
   create_table "games", force: true do |t|
     t.integer  "score1"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140130185940) do
     t.datetime "updated_at"
     t.string   "time1"
     t.string   "time2"
+    t.boolean  "modificado",   default: false
   end
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
