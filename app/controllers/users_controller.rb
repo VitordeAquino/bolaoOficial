@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 	def show
 	end
 
+  
+
   def palpite
     @games = User.find(current_user).games
   end

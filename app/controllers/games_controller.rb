@@ -38,6 +38,7 @@ class GamesController < ApplicationController
     end
   end
 
+
   def desfazer_update(numeroDoJogo)
     @users = User.all
     @users.each do |user|
@@ -87,6 +88,7 @@ class GamesController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /games/1
   # PATCH/PUT /games/1.json
