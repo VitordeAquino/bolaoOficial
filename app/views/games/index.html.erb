@@ -3,8 +3,13 @@
 <table>
   <thead>
     <tr>
+      <th>Time 1</th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Time 2</th>
       <th></th>
     </tr>
   </thead>
@@ -12,9 +17,14 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= link_to 'Show', game %></td>
+        <td><%= game.time1 %></td>
+        <td><%= image_tag src="/images/#{game.time1}.png"%></td>
+        <td><%= game.score1 %></td>
+        <td>X</td>
+        <td><%= game.score2 %></td>
+        <td><%= image_tag src="/images/#{game.time2}.png"%></td>
+        <td><%= game.time2 %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

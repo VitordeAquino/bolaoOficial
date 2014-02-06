@@ -1,12 +1,23 @@
 <%= simple_form_for(@game) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :time1 %>
-  <%= f.input :time2 %>
-  <%= f.input :score1 %>
-  <%= f.input :score2 %>
-  <%= f.input :user_id %>
-  <%= f.input :numeroDoJogo %>
+  <table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @game.time1 %></td>
+        <td><%= image_tag src="/images/#{@game.time1}.png"%></td>
+        <td><%= f.input :score1 , label: false %></td>
+        <td><%= f.input :score2, label: false %></td>
+        <td><%= image_tag src="/images/#{@game.time2}.png"%></td>
+        <td><%= @game.time2 %></td>
+      </tr>
+  </tbody>
+</table>
 
   <div class="form-actions">
     <%= f.button :submit %>
