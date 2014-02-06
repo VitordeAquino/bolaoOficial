@@ -18,8 +18,8 @@ BolaoOficial::Application.configure do
   config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -35,9 +35,10 @@ BolaoOficial::Application.configure do
     config.action_mailer.smtp_settings = {
     :address            => 'smtp.gmail.com',
     :port               => 587,
-    :domain             => 'localhost:3000', #you can also use google.com
+    :domain             => 'google.com', #you can also use google.com
+    :enable_starttls_auto => true,
     :authentication     => :plain,
-    :user_name          => 'vitordeaquino@gmail.com',
-    :password           => '<password>'
+    :user_name          => 'user-name',
+    :password           => 'senha'
     }
 end
