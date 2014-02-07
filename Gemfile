@@ -12,6 +12,8 @@ gem 'simple_form'
 
 gem 'thin'
 
+gem 'bootstrap-sass', '~> 3.1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

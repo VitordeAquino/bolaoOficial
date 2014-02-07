@@ -7,20 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", root_path %>
-<%= link_to "Edit Profile", edit_user_registration_path 
-%>
-<% if current_user %>
-	<% if current_user.admin? %>
-		<%= link_to 'Meus Jogos', games_path %>
-	<% else %>
-		<%= link_to 'Meus Jogos', palpite_path %>
-	<% end  %>
-	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-	<% else %>
-	<%= link_to "Login", new_user_session_path %>
-	<% end  %>
-<%= yield %>
+<%= render 'layouts/header'%>
+
+<div class="row">
+            <div class="span12" style="text-align:center; margin: 0 auto;">
+            	<%= yield %>
+            </div>
+</div>
+
 
 </body>
 </html>
