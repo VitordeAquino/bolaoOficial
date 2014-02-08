@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   before_save :default_values
 
   has_many :games
+  has_many :pins
   accepts_nested_attributes_for :games
 
   def default_values

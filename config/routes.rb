@@ -1,4 +1,6 @@
 BolaoOficial::Application.routes.draw do
+  resources :pins
+
   resources :games
 
   devise_for :users, :controllers => {:registrations => "devise/registrations"}
