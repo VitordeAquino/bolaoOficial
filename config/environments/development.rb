@@ -38,7 +38,7 @@ BolaoOficial::Application.configure do
     :domain             => 'google.com', #you can also use google.com
     :enable_starttls_auto => true,
     :authentication     => :plain,
-    :user_name          => 'vitordeaquino@gmail.com',
-    :password           => 'flamengo1981'
+    :user_name          => 'email',
+    :password           => 'password'
     }
 end
