@@ -4,16 +4,18 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></a></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-	    <li><% if current_user %>
-		<% if current_user.admin? %><li>
-			<%= link_to 'Meus Jogos', games_path %></li>
-		<% else %>
-			<%= link_to 'Meus Jogos', palpite_path %></li>
-		<% end  %>
-		<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-		<% else %>
-		<li><%= link_to "Login", new_user_session_path %></li>
-		<% end %> 
+		    	<% if current_user %>
+						<% if current_user.admin? %><li>
+							<li><%= link_to "Meus Jogos", games_path %></li>
+							<li><%= link_to "Comprovantes", pins_path%></li>
+						<% else %>
+							<li><%= link_to 'Meus Jogos', palpite_path %></li>
+							<li><%= link_to "Comprovante", pins_path%></li>
+						<% end %>
+						<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+						<li><%= link_to "Login", new_user_session_path %></li>
+					<% end %> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

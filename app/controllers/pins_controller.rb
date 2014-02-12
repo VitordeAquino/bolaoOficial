@@ -5,7 +5,11 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = current_user.pins.all
+    if current_user.admin?
+      @pins = Pin.all
+    else
+      @pins = current_user.pins.all
+    end
   end
 
   # GET /pins/1

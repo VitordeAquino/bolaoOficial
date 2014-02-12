@@ -9,15 +9,15 @@ class UsersController < ApplicationController
 	def show
 	end
 
-  
-
-  def palpite
-    @games = User.find(current_user).games
-  end
 
 	def edit
 	end
 
+
+  def palpite
+    @games = User.find(current_user).games
+  end
+  
 	def update
     respond_to do |format|
       if @user.update(user_params)
