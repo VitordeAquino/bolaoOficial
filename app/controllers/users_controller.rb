@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, only: [:show, :edit, :update, :palpite]
 	before_action :set_user, only: [:show, :edit, :update]
 
 	def index
