@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :pins
   accepts_nested_attributes_for :games
 
+   validates :email, :uniqueness => true
+
   def default_values
     self.pontos ||= 0
   end
