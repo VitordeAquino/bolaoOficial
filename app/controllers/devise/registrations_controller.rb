@@ -10,6 +10,7 @@ class Devise::RegistrationsController < DeviseController
   end
 
   def create_games
+
     Game.create(time1: "Brasil", time2: "Croacia", user_id: current_user.id, numeroDoJogo: 1)
     Game.create(time1: "Mexico", time2: "Camaroes", user_id: current_user.id, numeroDoJogo: 2)
     Game.create(time1: "Brasil", time2: "Mexico", user_id: current_user.id, numeroDoJogo: 3)

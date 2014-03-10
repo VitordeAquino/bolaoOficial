@@ -3,20 +3,27 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></a></li>
-		    	<% if current_user %>
-		    		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-						<% if current_user.admin? %><li>
-							<li><%= link_to "Meus Jogos", games_path %></li>
-							<li><%= link_to "Comprovantes", pins_path%></li>
-						<% else %>
-							<li><%= link_to 'Meus Jogos', palpite_path %></li>
-							<li><%= link_to "Comprovante", pins_path%></li>
-						<% end %>
-						<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+	    	<% if current_user %>
+	    		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+					<% if current_user.admin? %><li>
+						<li><%= link_to "Meus Jogos", games_path %></li>
+						<li><%= link_to "Comprovantes", pins_path%></li>
 					<% else %>
-						<li><%= link_to "Login", new_user_session_path %></li>
-					<% end %> 
-      </ul>
+						<li><%= link_to 'Meus Jogos', palpite_path %></li>
+						<li><%= link_to "Comprovante", pins_path%></li>
+					<% end %>
+				<% end %>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<% if current_user %>
+					<li align="Right"><%= current_user.email %></li>
+					<li align="Right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li align="Right"><%= link_to "Login", new_user_session_path %></li>
+				<% end %>
+			</ul>
+				 
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
