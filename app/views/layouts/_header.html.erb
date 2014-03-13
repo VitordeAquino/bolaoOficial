@@ -16,10 +16,11 @@
 			</ul>
 			<ul class="nav navbar-nav pull-right">
 				<% if current_user %>
-					<li align="Right"><%= current_user.email %></li>
-					<li align="Right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<li><%= link_to "Add Comprovante", new_pin_path %></li>
+					<li ><%= current_user.email %></li>
+					<li ><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 				<% else %>
-					<li align="Right"><%= link_to "Login", new_user_session_path %></li>
+					<li ><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
 			</ul>
 				 
