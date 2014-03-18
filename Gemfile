@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'thin'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
+gem 'rails-i18n', '~> 4.0.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
