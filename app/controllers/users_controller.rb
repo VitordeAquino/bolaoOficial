@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_filter :authenticate_user!, only: [:show, :edit, :update, :palpite]
 	before_action :set_user, only: [:show, :edit, :update]
+  before_action :retorna_user, only: [:palpite]
 
 	def index
 		@users = User.all.where(admin: false)
@@ -11,11 +12,12 @@ class UsersController < ApplicationController
 
 
 	def edit
+    @games = @user.games
 	end
 
 
   def palpite
-    @games = User.find(current_user).games
+    @games = @user.games 
   end
   
 	def update
@@ -31,7 +33,11 @@ class UsersController < ApplicationController
   end
 
   def set_user
-  @user = User.find(current_user)
+    @user = User.find(current_user)
+  end
+
+  def retorna_user
+    @user = User.find(params[:id])
   end
 
   def user_params

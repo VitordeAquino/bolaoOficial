@@ -23,6 +23,7 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Edit Games', edit_user_path(current_user) %>
+<% if @games.first.user_id == current_user.id %>
+  <%= link_to 'Edit Games', edit_user_path(current_user) %>
+<% end %>
 <br>

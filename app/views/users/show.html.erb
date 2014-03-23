@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+	<%= @user.fields_for :games do |builder| %>
+	  	<%= render "game_fields", :f => builder %>
+  	<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
