@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 	before_filter :authenticate_user!, only: [:show, :edit, :update, :palpite]
-	before_action :set_user, only: [:show, :edit, :update]
-  before_action :retorna_user, only: [:palpite]
+	before_action :set_user, only: [:show, :edit, :meu_palpite]
+  before_action :retorna_user, only: [:palpite, :edit_usuario, :update]
 
 	def index
 		@users = User.all.where(admin: false)
 	end
+
+  def usuarios_cadastrados
+    @users = User.all.where(admin: false)
+  end
 
 	def show
 	end
@@ -15,6 +19,12 @@ class UsersController < ApplicationController
     @games = @user.games
 	end
 
+  def edit_usuario
+  end
+
+  def meu_palpite
+    @games = @user.games
+  end
 
   def palpite
     @games = @user.games 
@@ -23,7 +33,7 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to palpite_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -41,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-  params.require(:user).permit(games_attributes: [:id, :score1, :score2, :_destroy,])
+  params.require(:user).permit(:pago, games_attributes: [:id, :score1, :score2, :_destroy,])
   end
 
 end

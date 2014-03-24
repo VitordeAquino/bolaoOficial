@@ -8,6 +8,9 @@ BolaoOficial::Application.routes.draw do
   resources :users
 
   get 'palpite', to: 'users#palpite'
+  get 'meu_palpite', to: 'users#meu_palpite'
+  get 'usuarios_cadastrados', to: 'users#usuarios_cadastrados'
+  get 'edit_usuario', to: 'users#edit_usuario'
   get 'atualizarPontos', to: 'users#atualizarPontos'
   get 'atualizarTodosUsers', to: 'users#atualizarTodosUsers'
 

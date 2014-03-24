@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208133824) do
+ActiveRecord::Schema.define(version: 20140323155140) do
 
   create_table "games", force: true do |t|
     t.integer  "score1"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140208133824) do
     t.datetime "updated_at"
     t.integer  "pontos"
     t.boolean  "admin",                  default: false
+    t.boolean  "pago",                   default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

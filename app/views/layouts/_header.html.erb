@@ -8,8 +8,9 @@
 					<% if current_user.admin? %><li>
 						<li><%= link_to "Meus Jogos", games_path %></li>
 						<li><%= link_to "Comprovantes", pins_path%></li>
+						<li><%= link_to "Usuarios Cadastrados", usuarios_cadastrados_path%></li>
 					<% else %>
-						<li><%= link_to 'Meus Jogos', palpite_path %></li>
+						<li><%= link_to 'Meus Jogos', meu_palpite_path %></li>
 						<li><%= link_to "Comprovante", pins_path%></li>
 					<% end %>
 				<% end %>

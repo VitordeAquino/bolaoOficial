@@ -1,0 +1,14 @@
+<%= simple_form_for(@user) do |f| %>
+	<%= f.error_notification %>
+  
+  
+ <%= f.input :pago, as: :radio_buttons %>
+
+
+  
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+
+<% end %>

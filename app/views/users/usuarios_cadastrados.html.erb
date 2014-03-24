@@ -1,0 +1,16 @@
+<h1>Classificação</h1>
+
+<table>
+  <tbody>
+    <table>
+          <td>Nome</td>
+     <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.email, edit_usuario_path(:id => user.id) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </tbody>
+</table>
+
+<br>
