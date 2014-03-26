@@ -33,8 +33,18 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+        @games = @user.games 
+        @games.each do |game|
+          if game.score1 == nil 
+            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os jogos"}  }
+          end
+          if game.score2 == nil
+            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os jogos"}  }
+          end
+        end
+        format.html { redirect_to users_path, notice: 'Palpites atualizados com sucesso' }
         format.json { head :no_content }
+
       else
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
