@@ -44,20 +44,24 @@ class GamesController < ApplicationController
     @users.each do |user|
       if current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score1 && current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         user.pontos = user.pontos - 3
+        user.placar = user.placar - 1
         user.save
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
+          user.resultado = user.resultado - 1
           user.save
         end
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
+          user.resultado = user.resultado - 1
           user.save
         end
       else
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
+          user.resultado = user.resultado - 1
           user.save
         end
       end
@@ -69,20 +73,24 @@ class GamesController < ApplicationController
     @users.each do |user|
       if current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score1 && current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         user.pontos = user.pontos + 3
+        user.placar = user.placar + 1
         user.save
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
+          user.resultado = user.resultado + 1
           user.save
         end
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
+          user.resultado = user.resultado + 1
           user.save
         end
       else
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
+          user.resultado = user.resultado + 1
           user.save
         end
       end
@@ -98,6 +106,7 @@ class GamesController < ApplicationController
     end
     @game.modificado = true
     respond_to do |format|
+
       if @game.update(game_params)
         if current_user.admin?
           atualizar_pontos(@game.numeroDoJogo)

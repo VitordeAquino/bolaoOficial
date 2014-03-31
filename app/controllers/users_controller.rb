@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :retorna_user, only: [:palpite, :edit_usuario, :update]
 
 	def index
-		@users = User.all.where(admin: false)
+		@users = User.all.where(admin: false, pago: true).order(placar: :desc, resultado: :desc)
 	end
 
   def usuarios_cadastrados
@@ -32,19 +32,16 @@ class UsersController < ApplicationController
   
 	def update
     respond_to do |format|
-      if @user.update(user_params)
-        @games = @user.games 
-        @games.each do |game|
-          if game.score1 == nil 
-            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os jogos"}  }
+        params["user"]["games_attributes"].each do |jogo|
+          i = 1
+          if jogo[i]["score1"] == "" || jogo[i]["score2"] == ""
+            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares"}  }
           end
-          if game.score2 == nil
-            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os jogos"}  }
-          end
+          i += 1
         end
+      if @user.update(user_params)
         format.html { redirect_to users_path, notice: 'Palpites atualizados com sucesso' }
         format.json { head :no_content }
-
       else
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }

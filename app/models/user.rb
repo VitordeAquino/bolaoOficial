@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   def default_values
     self.pontos ||= 0
+    self.placar ||= 0
+    self.resultado ||= 0
   end
   
  end
