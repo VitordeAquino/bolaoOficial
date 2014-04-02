@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :retorna_user, only: [:palpite, :edit_usuario, :update]
 
 	def index
-		@users = User.all.where(admin: false, pago: true).order(placar: :desc, resultado: :desc)
+		@users = User.all.where(admin: false, pago: true).order(placar: :desc, resultado: :desc, pontosGrupoBrasil: :desc)
 	end
 
   def usuarios_cadastrados

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330133504) do
+ActiveRecord::Schema.define(version: 20140402153424) do
 
   create_table "games", force: true do |t|
     t.integer  "score1"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140330133504) do
     t.boolean  "pago",                   default: false
     t.integer  "placar"
     t.integer  "resultado"
+    t.integer  "pontosGrupoBrasil"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

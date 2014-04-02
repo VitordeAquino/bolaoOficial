@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     self.pontos ||= 0
     self.placar ||= 0
     self.resultado ||= 0
+    self.pontosGrupoBrasil ||= 0
   end
   
  end

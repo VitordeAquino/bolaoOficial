@@ -41,27 +41,40 @@ class GamesController < ApplicationController
 
   def desfazer_update(numeroDoJogo)
     @users = User.all
+    @games = current_user.games
     @users.each do |user|
       if current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score1 && current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         user.pontos = user.pontos - 3
         user.placar = user.placar - 1
+        if numeroDoJogo >= 1 && numeroDoJogo <= 6
+          user.pontosGrupoBrasil = user.pontosGrupoBrasil - 3
+        end
         user.save
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
           user.resultado = user.resultado - 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil - 1
+          end
           user.save
         end
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
           user.resultado = user.resultado - 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil - 1
+          end
           user.save
         end
       else
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos - 1
           user.resultado = user.resultado - 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil - 1
+          end
           user.save
         end
       end
@@ -74,23 +87,35 @@ class GamesController < ApplicationController
       if current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score1 && current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         user.pontos = user.pontos + 3
         user.placar = user.placar + 1
+        if numeroDoJogo >= 1 && numeroDoJogo <= 6
+          user.pontosGrupoBrasil = user.pontosGrupoBrasil + 3
+        end
         user.save
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 > user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
           user.resultado = user.resultado + 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil + 1
+          end
           user.save
         end
       elsif current_user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < current_user.games.find_by_numeroDoJogo(numeroDoJogo).score2
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 < user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
           user.resultado = user.resultado + 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil + 1
+          end
           user.save
         end
       else
         if user.games.find_by_numeroDoJogo(numeroDoJogo).score1 == user.games.find_by_numeroDoJogo(numeroDoJogo).score2
           user.pontos = user.pontos + 1
           user.resultado = user.resultado + 1
+          if numeroDoJogo >= 1 && numeroDoJogo <= 6
+            user.pontosGrupoBrasil = user.pontosGrupoBrasil + 1
+          end
           user.save
         end
       end
