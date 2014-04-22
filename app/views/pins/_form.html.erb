@@ -2,10 +2,10 @@
   <%= f.full_error :image_file_size, class: "alert alert-error"%>
   <%= f.full_error :image_content_type, class: "alert alert-error"%>
 
-  	<%= f.input :image, label: "Upload an image" %>
-    <%= f.input :descricao, :as => :text, input_html: { rows: "3"} %>
+  	<p><%= f.input :image, label: "Enviar Imagem" %></p>
+    <p><%= f.input :descricao, :as => :text, input_html: { rows: "3"} %></p>
   
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "enviar", class: "btn btn-primary" %>
   </div>
 <% end %>

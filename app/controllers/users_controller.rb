@@ -33,13 +33,13 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
         if !current_user.admin?
-        params["user"]["games_attributes"].each do |jogo|
-          i = 1
-          if jogo[i]["score1"] == "" || jogo[i]["score2"] == ""
-            format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares"}  }
+          params["user"]["games_attributes"].each do |jogo|
+            i = 1
+            if jogo[i]["score1"] == "" || jogo[i]["score2"] == ""
+              format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares"}  }
+            end
+            i += 1
           end
-          i += 1
-        end
         end
       if @user.update(user_params)
         format.html { redirect_to users_path, notice: 'Palpites atualizados com sucesso' }

@@ -1,29 +1,22 @@
-<h1>Listing games</h1>
+<h1>Meus jogos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time1</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Time2</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.time1 %></td>
-        <td><%= game.score1 %></td>
-        <td>X</td>
-        <td><%= game.score2 %></td>
-        <td><%= game.time2 %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 <% if @games.first.user_id == current_user.id %>
-  <%= link_to 'Edit Games', edit_user_path(current_user) %>
+  <%= link_to 'Editar Jogos', edit_user_path(current_user) %>
 <% end %>
-<br>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <% $contador = 1 %>
+
+  <table class="table table-striped" >
+    <%= f.fields_for :games do |builder| %>
+      <%= render "game_fields_read_only", :f => builder %>
+    <% end %>
+  </table>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+
+<% end %>

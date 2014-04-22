@@ -51,7 +51,7 @@ Game.create(time1: "Bosnia-Herzegovina", time2: "Ira", user_id: 1, numeroDoJogo:
 Game.create(time1: "Nigeria", time2: "Argentina", user_id: 1, numeroDoJogo: 36)
 
 Game.create(time1: "Alemanha", time2: "Portugal", user_id: 1, numeroDoJogo: 37)
-Game.create(time1: "gana", time2: "Estados Unidos", user_id: 1, numeroDoJogo: 38)
+Game.create(time1: "Gana", time2: "Estados Unidos", user_id: 1, numeroDoJogo: 38)
 Game.create(time1: "Alemanha", time2: "Gana", user_id: 1, numeroDoJogo: 39)
 Game.create(time1: "Estados Unidos", time2: "Portugal", user_id: 1, numeroDoJogo: 40)
 Game.create(time1: "Portugal", time2: "Gana", user_id: 1, numeroDoJogo: 41)

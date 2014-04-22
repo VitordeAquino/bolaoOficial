@@ -1,18 +1,30 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	<%= devise_error_messages! %>
-	
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="row">
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+	<div class="jumbotron">
+	  	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
+		<h2>Registrar</h2>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+		  <p><div><%= f.label :email %><br />
+		  <%= f.email_field :email, :autofocus => true %></div></p>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+		  <p><div><%= f.label :senha %></div>
+		  <div><%= f.password_field :password %></div></p>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+		  <p><div><%= f.label :confirmação_de_senha %>
+		  <%= f.password_field :password_confirmation %></div></p>
 
-<%= render "devise/shared/links" %>
+		  </p><div><%= f.submit "Registrar", class: "btn btn-primary btn-lg" %></div></p>
+
+		  <%= render "devise/shared/links" %>
+		<% end %>
+	</div>
+  </div>
+  <div class="col-xs-6 col-md-4"></div>
+</div>
+
+
+
+

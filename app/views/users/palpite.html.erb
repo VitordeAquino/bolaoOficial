@@ -1,26 +1,15 @@
-<h1>Listing games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Time1</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Time2</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.time1 %></td>
-        <td><%= game.score1 %></td>
-        <td>X</td>
-        <td><%= game.score2 %></td>
-        <td><%= game.time2 %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<table class="table table-striped" >
+<% @games.each do |game| %>
+  <tr>
+          <td width=400px> </td>
+          <td width=50px><%= game.time1 %></td>
+          <td><%= image_tag src="/images/#{game.time1}.png"%></td>
+          <td width=10px><%=  game.score1%></td>
+          <td width=5px>X</td>
+          <td width=10px><%= game.score2%></td>
+          <td><%= image_tag src="/images/#{game.time2}.png" %>  </td>
+          <td width=50px><%= game.time2 %></td>
+          <td width=400px> </td>
+</tr>
+<% end %>
 </table>
-<br>

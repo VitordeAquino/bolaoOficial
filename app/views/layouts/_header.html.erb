@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", root_path %></a></li>
         <% if current_user %>
-          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Meu Perfil", edit_user_registration_path %></li>
           <% if current_user.admin? %><li>
             <li><%= link_to "Meus Jogos", games_path %></li>
             <li><%= link_to "Comprovantes", pins_path%></li>
@@ -17,7 +17,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
-          <li ><%= current_user.email %></li>
+          <li ><%= link_to current_user.email %></li>
           <li><%= link_to "Add Comprovante", new_pin_path %></li>
           <li ><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>

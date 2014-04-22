@@ -54,7 +54,7 @@ class Devise::RegistrationsController < DeviseController
       Game.create(time1: "Nigeria", time2: "Argentina", user_id: current_user.id, numeroDoJogo: 36, modificado: false)
 
       Game.create(time1: "Alemanha", time2: "Portugal", user_id: current_user.id, numeroDoJogo: 37, modificado: false)
-      Game.create(time1: "gana", time2: "Estados Unidos", user_id: current_user.id, numeroDoJogo: 38, modificado: false)
+      Game.create(time1: "Gana", time2: "Estados Unidos", user_id: current_user.id, numeroDoJogo: 38, modificado: false)
       Game.create(time1: "Alemanha", time2: "Gana", user_id: current_user.id, numeroDoJogo: 39, modificado: false)
       Game.create(time1: "Estados Unidos", time2: "Portugal", user_id: current_user.id, numeroDoJogo: 40, modificado: false)
       Game.create(time1: "Portugal", time2: "Gana", user_id: current_user.id, numeroDoJogo: 41, modificado: false)
