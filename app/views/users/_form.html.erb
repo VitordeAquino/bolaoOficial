@@ -1,15 +1,22 @@
+<h1>Meus jogos</h1>
+
+<% if @games.first.user_id == current_user.id %>
+  <%= link_to 'Editar Jogos', edit_user_path(@user) %>
+<% end %>
+
 <%= simple_form_for(@user) do |f| %>
 	<%= f.error_notification %>
   <% $contador = 1 %>
 
   <table class="table table-striped" >
   	<%= f.fields_for :games do |builder| %>
-	  	<%= render "game_fields", :f => builder %>
+	  	<%= render :"game_fields", :f => builder %>
   	<% end %>
   </table>
 
   <div class="form-actions">
-    <%= f.button :submit,"Salvar", class: "btn btn-primary btn-large" %>(verifique se todos os jogos estão preenchidos)
+    <%= f.button :submit,"Salvar", class: "btn btn-primary btn-large" %>
+    (verifique se todos os jogos estão preenchidos)
   </div>
 
 
