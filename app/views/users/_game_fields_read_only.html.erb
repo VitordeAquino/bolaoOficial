@@ -1,0 +1,128 @@
+<% if $contador == 1%>
+<tr>
+		<td width=200px></td>
+          <td width=120px><h3> Grupo A</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+<% end %>
+
+<% if $contador == 7%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo B</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+<% end %>
+
+<% if $contador == 13%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo C</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+
+<% end %>
+
+<% if $contador == 19%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo D</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+
+<% end %>
+
+<% if $contador == 25%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo E</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+
+<% end %>
+
+<% if $contador == 31%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo F</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+
+<% end %>
+
+<% if $contador == 37%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo G</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+<% end %>
+
+<% if $contador == 43%>
+<tr>
+		  <td width=200px></td>
+          <td width=120px><h3> Grupo H</h3></td>
+          <td></td>
+          <td width=20px></td>
+          <td width=5px></td>
+          <td width=20px></td>
+          <td></td>
+          <td width=50px></td>
+          <td width=100px></td>
+</tr>
+<% end %>
+
+<tr>
+		<td width=400px> </td>
+          <td width=50px><%= current_user.games.find_by_numeroDoJogo($contador).time1 %></td>
+          <td><%= image_tag src="/images/#{current_user.games.find_by_numeroDoJogo($contador).time1}.png"%></td>
+          <td width=10px><%=  current_user.games.find_by_numeroDoJogo($contador).score1%></td>
+          <td width=5px>X</td>
+          <td width=10px><%= current_user.games.find_by_numeroDoJogo($contador).score2%></td>
+          <td><%= image_tag src="/images/#{current_user.games.find_by_numeroDoJogo($contador).time2}.png" %>	</td>
+          <td width=50px><%= current_user.games.find_by_numeroDoJogo($contador).time2 %></td>
+          <td width=400px> </td>
+</tr>
+<% $contador += 1 %>	
