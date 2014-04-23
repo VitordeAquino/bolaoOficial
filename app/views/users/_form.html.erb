@@ -1,5 +1,3 @@
-<h1>Meus jogos</h1>
-
 <% if @games.first.user_id == current_user.id %>
   <%= link_to 'Editar Jogos', edit_user_path(@user) %>
 <% end %>
@@ -10,7 +8,7 @@
 
   <table class="table table-striped" >
   	<%= f.fields_for :games do |builder| %>
-	  	<%= render :"game_fields", :f => builder %>
+	  	<%= render "game_fields", :f => builder %>
   	<% end %>
   </table>
 

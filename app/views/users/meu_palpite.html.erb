@@ -10,7 +10,7 @@
 
   <table class="table table-striped" >
     <%= f.fields_for :games do |builder| %>
-      <%= render "game_fields", :f => builder %>
+      <%= render "game_fields_read_only", :f => builder %>
     <% end %>
   </table>
 
