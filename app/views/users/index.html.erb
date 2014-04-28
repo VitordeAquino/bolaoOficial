@@ -1,18 +1,75 @@
-<h1>Classificação</h1>
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+  <div class="jumbotron">
+      <h2>Classificação</h2>
 
-<table>
-  <tbody>
+      <table>
+        <tbody>
+          <table class="table table-striped" >
+                <td>Nome</td>
+                <td>Pontos</td>
+           <% @users.each do |user| %>
+              <tr>
+                <td><%= link_to user.email, palpite_path(:id => user.id) %></td>
+                <td><%= user.pontos%></td>
+              </tr>
+            <% end %>
+          </table>
+        </tbody>
+      </table>
+  </div>
+</div>
+  <div class="col-xs-6 col-md-4">
     <table class="table table-striped" >
-          <td>Nome</td>
-          <td>Pontos</td>
-     <% @users.each do |user| %>
-        <tr>
-          <td><%= link_to user.email, palpite_path(:id => user.id) %></td>
-          <td><%= user.pontos%></td>
-        </tr>
-      <% end %>
-    </table>
-  </tbody>
+<% User.find_by_id(1).games.each do |game| %>
+  <tr>
+          <td width=400px> </td>
+          <td width=50px><%= game.time1 %></td>
+          <td><%= image_tag src="/images/#{game.time1}.png"%></td>
+          <td width=10px><%=  game.score1%></td>
+          <td width=5px>X</td>
+          <td width=10px><%= game.score2%></td>
+          <td><%= image_tag src="/images/#{game.time2}.png" %>  </td>
+          <td width=50px><%= game.time2 %></td>
+          <td width=400px> </td>
+</tr>
+<% end %>
 </table>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <% unless user_signed_in? %>
+    <div class="jumbotron">
+      <h2>Login</h2>
+       
+  <%= form_for("user", :url => user_session_path) do |f| %> 
+    <%= f.label :email %> <br/> 
+    <%= f.email_field :email %> <br/> 
+    <%= f.label :password %> <br/> 
+    <%= f.password_field :password %> 
+<br/> 
+    <p><div><%= f.submit "Logar",class: "btn btn-primary btn-md" %></div></p> 
+    <%= link_to "Esqueceu sua senha?", new_password_path('user')  %> <br/>
+    <%= link_to "Registre-se?", new_registration_path("user")  %> 
+     <% end %> 
+     
+  </div>
+  <% end %>
+     <div class="jumbotron">
+      <% @quantidade = User.all.where(admin: false, pago: true).count %>
+      Premiacao dos vencedores: <br/>
+      Primeiro Colocado: R$ <%=@quantidade %> <br/>
+      Segundo Colocado: R$ <%=@quantidade %> <br/>
+      Terceiro Colocado: R$ <%=@quantidade %>
+    
 
-<br>
+
+     </div>
+
+      
+
+
+
+
+
+  </div>
+</div>
