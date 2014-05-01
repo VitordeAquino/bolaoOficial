@@ -10,7 +10,7 @@
             <li><%= link_to "Comprovantes", pins_path%></li>
             <li><%= link_to "Usuarios Cadastrados", usuarios_cadastrados_path%></li>
           <% else %>
-            <li><%= link_to 'Meus Jogos', meu_palpite_path %></li>
+            <li><%= link_to 'Meus Jogos', edit_user_path(current_user) %></li>
             <li><%= link_to "Comprovante", pins_path%></li>
           <% end %>
         <% end %>
@@ -20,7 +20,6 @@
           <li ><%= link_to current_user.email %></li>
           <li><%= link_to "Add Comprovante", new_pin_path %></li>
           <li ><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <% else %>
         <% end %>
       </ul>
 				 

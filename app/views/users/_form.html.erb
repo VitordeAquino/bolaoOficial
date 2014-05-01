@@ -1,7 +1,3 @@
-<% if @games.first.user_id == current_user.id %>
-  <%= link_to 'Editar Jogos', edit_user_path(@user) %>
-<% end %>
-
 <%= simple_form_for(@user) do |f| %>
 	<%= f.error_notification %>
   <% $contador = 1 %>
@@ -13,8 +9,11 @@
   </table>
 
   <div class="form-actions">
-    <%= f.button :submit,"Salvar", class: "btn btn-primary btn-large" %>
-    (verifique se todos os jogos estão preenchidos)
+    <% if @user.games.first.score1 == nil %>
+      <%= f.button :submit,"Salvar", class: "btn btn-primary btn-large" %> (verifique se todos os jogos estão preenchidos)
+    <% else %>
+      <%= f.button :submit,"Atualizar Jogos", class: "btn btn-primary btn-large" %> (verifique se todos os jogos estão preenchidos)
+    <% end %>  
   </div>
 
 

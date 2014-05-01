@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-  params.require(:user).permit(:pago, games_attributes: [:id, :score1, :score2, :_destroy,])
+  params.require(:user).permit(:pago,:nome, games_attributes: [:id, :score1, :score2, :_destroy,])
   end
 
 end
