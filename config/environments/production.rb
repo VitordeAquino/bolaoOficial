@@ -92,7 +92,7 @@ BolaoOficial::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "127.0.0.1",
     :port    => 587,
-    :domain  => 'google.com'
+    :domain  => 'google.com',
     :user_name => 'bolao2014brasil@gmail.com',
     :password => 'aljrnevi'
 }
