@@ -93,8 +93,8 @@ BolaoOficial::Application.configure do
     :address => "127.0.0.1",
     :port    => 587,
     :domain  => 'google.com'
-    :user_name => 'email',
-    :password => 'password'
+    :user_name => 'bolao2014brasil',
+    :password => 'aljrnevi'
 }
 
 end
