@@ -1,8 +1,12 @@
+
+<img src="images/brasil2014.gif" alt="Banner" width="1200" height="400"> 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <a class="navbar-brand" href="#">Bolão da Copa 2014</a>
         <li><%= link_to "Home", root_path %></a></li>
+        <li><%= link_to "Regras", root_path %></a></li>
         <% if current_user %>
           <li><%= link_to "Meu Perfil", edit_user_registration_path %></li>
           <% if current_user.admin? %><li>
