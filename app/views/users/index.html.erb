@@ -24,46 +24,53 @@
           <table class="table table-condensed" >
               <% contador_admin = 1%>
               <% User.find_by_id(1).games.each do |game| %>
-              <% if contador_admin == 1 || contador_admin == 7 || contador_admin == 13 || contador_admin == 19 || contador_admin == 25 || contador_admin == 31 || contador_admin == 37 || contador_admin == 43%>
-                <tr>
-                      <td width=400px></td>
-                      <td width=50px> 
+                <% if contador_admin == 1 || contador_admin == 7 || contador_admin == 13 || contador_admin == 19 || contador_admin == 25 || contador_admin == 31 || contador_admin == 37 || contador_admin == 43 %>
+                  <tr>
+                        <td width=400px></td>
+                        <td width=50px> 
 
-                      <% if contador_admin == 1 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo A</h4>
-                      <% end %>
-                      <% if contador_admin == 7 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo B</h4>
-                      <% end %>
-                      <% if contador_admin == 13 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo C</h4>
-                      <% end %>
-                      <% if contador_admin == 19 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo D</h4>
-                      <% end %>
-                      <% if contador_admin == 25 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo E</h4>
-                      <% end %>
-                      <% if contador_admin == 31 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo F</h4>
-                      <% end %>
-                      <% if contador_admin == 37 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo G</h4>
-                      <% end %>
-                      <% if contador_admin == 43 %> 
-                      <h4 style="font-family:arial; color:#231e5b">Grupo H</h4>
-                      <% end %>
+                        <% if contador_admin == 1 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo A</h4>
+                        <% end %>
 
-                      </td>
-                      <td></td>
-                      <td width=10px></td>
-                      <td width=5px> </td>
-                      <td width=10px></td>
-                      <td> </td>
-                      <td width=50px></td>
-                      <td width=400px></td>
-                </tr>
-              <% end %>
+                        <% if contador_admin == 7 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo B</h4>
+                        <% end %>
+
+                        <% if contador_admin == 13 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo C</h4>
+                        <% end %>
+
+                        <% if contador_admin == 19 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo D</h4>
+                        <% end %>
+
+                        <% if contador_admin == 25 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo E</h4>
+                        <% end %>
+
+                        <% if contador_admin == 31 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo F</h4>
+                        <% end %>
+
+                        <% if contador_admin == 37 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo G</h4>
+                        <% end %>
+
+                        <% if contador_admin == 43 %> 
+                        <h4 style="font-family:arial; color:#231e5b">Grupo H</h4>
+                        <% end %>
+
+                        </td>
+                        <td></td>
+                        <td width=10px></td>
+                        <td width=5px> </td>
+                        <td width=10px></td>
+                        <td> </td>
+                        <td width=50px></td>
+                        <td width=400px></td>
+                  </tr>
+                <% end %>
               <tr>
                     <td width=400px> </td>
                     <td width=50px><%= game.time1 %></td>
@@ -83,12 +90,13 @@
       <% unless user_signed_in? %>
 
       <div class="jumbotron">
-        <h2 style="font-family:arial">Login</h2>
+        <h2 style="font-family:arial; color:white">Login</h2>
          
           <%= form_for("user", :url => user_session_path) do |f| %> 
-              <%= f.label :email %> <br/> 
+              <t style="font-family:arial; color:white"><%= f.label :email %></t> <br/> 
               <%= f.email_field :email %> <br/> 
-              <%= f.label :password %> <br/> 
+              <p></p>
+              <t style="font-family:arial; color:white"><%= f.label :password %></t> <br/> 
               <%= f.password_field :password %> 
               <br/> 
               <p><div><%= f.submit "Logar",class: "btn btn-primary btn-md" %></div></p> 
@@ -104,9 +112,9 @@
         <br/>
         <font size="5" face="Verdana" color="yellow">Prêmios:</font>
         <br/> 
-        <font size="4" face="Verdana" color="yellow">1º:</font> R$ <%=@quantidade %>,00 <br/>
-        <font size="4" face="Verdana" color="yellow">2º:</font> R$ <%=@quantidade %>,00 <br/>
-        <font size="4" face="Verdana" color="yellow">3º:</font> R$ <%=@quantidade %>,00
+        <font size="4" face="Verdana" color="yellow">1º:</font><font size="3" face="Verdana" color="white"> R$ <%=@quantidade %>,00 <br/></font>
+        <font size="4" face="Verdana" color="yellow">2º:</font><font size="3" face="Verdana" color="white"> R$ <%=@quantidade %>,00 <br/></font>
+        <font size="4" face="Verdana" color="yellow">3º:</font><font size="3" face="Verdana" color="white"> R$ <%=@quantidade %>,00</font>
       </div>
     </div>
   </div>
