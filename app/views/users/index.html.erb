@@ -99,14 +99,16 @@
       </div>
       <% end %>
       <div class="jumbotron">
+        <div align="center">
         <% @quantidade = User.all.where(admin: false, pago: true).count %>
         <font size="4" face="Verdana" color="yellow">Já somos</font> </br> <font size="6" face="Verdana" color="yellow"><%= @quantidade%></font></br> <font size="4" face="Verdana" color="yellow">apostadores!</font> <br/>
         <br/>
         <font size="5" face="Verdana" color="yellow">Prêmios:</font>
         <br/> 
-        <font size="4" face="Verdana" color="yellow">1º:</font> R$ <%=@quantidade %>,00 <br/>
-        <font size="4" face="Verdana" color="yellow">2º:</font> R$ <%=@quantidade %>,00 <br/>
-        <font size="4" face="Verdana" color="yellow">3º:</font> R$ <%=@quantidade %>,00
+        <font size="4" face="Verdana" color="yellow">1º:</font> R$ <%=@quantidade*30*0.6 %> <br/>
+        <font size="4" face="Verdana" color="yellow">2º:</font> R$ <%=@quantidade*30*0.3 %> <br/>
+        <font size="4" face="Verdana" color="yellow">3º:</font> R$ <%=@quantidade*30*0.1 %>
+      </div>
       </div>
     </div>
   </div>

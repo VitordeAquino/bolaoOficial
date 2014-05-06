@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e913def2-abcf-450f-8dde-2cc099bcec92" name="Default" comment="" />
+    <list default="true" id="e913def2-abcf-450f-8dde-2cc099bcec92" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/games_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/games_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
+    </list>
     <ignored path="bolaoOficial.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e913def2-abcf-450f-8dde-2cc099bcec92" time="1396385649166" ignored="false" />
+    <file path="/Dummy.txt" changelist="e913def2-abcf-450f-8dde-2cc099bcec92" time="1399401764160" ignored="false" />
     <file path="/games_controller.rb" changelist="e913def2-abcf-450f-8dde-2cc099bcec92" time="1395765357914" ignored="false" />
     <file path="/users_controller.rb" changelist="e913def2-abcf-450f-8dde-2cc099bcec92" time="1396386229948" ignored="false" />
     <file path="/registrations_controller.rb" changelist="e913def2-abcf-450f-8dde-2cc099bcec92" time="1395765411214" ignored="false" />
@@ -28,19 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="40" selection-start="693" selection-end="693" vertical-scroll-proportion="1.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="games_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="games_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="6" selection-start="3944" selection-end="3944" vertical-scroll-proportion="0.0">
+            <state line="108" column="47" selection-start="4376" selection-end="4376" vertical-scroll-proportion="1.17">
               <folding />
             </state>
           </provider>
@@ -68,9 +62,9 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/devise/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/game.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/games_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/games_controller.rb" />
       </list>
     </option>
   </component>
@@ -82,10 +76,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1215" />
-    <option name="height" value="1000" />
+    <option name="x" value="64" />
+    <option name="y" value="-4" />
+    <option name="width" value="1217" />
+    <option name="height" value="1029" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -113,6 +107,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -177,86 +172,9 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bolaoOficial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,14 +362,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1215" height="1000" extended-state="6" />
+    <frame x="64" y="-4" width="1217" height="1029" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.255794" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26094422" sideWeight="0.4911111" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30888888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -525,65 +443,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="35" />
+      <option name="time" value="41" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.3319672" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_controller/metal.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="0" selection-start="5516" selection-end="5516" vertical-scroll-proportion="0.3319672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.3326316">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.3319672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-4.0.1/lib/active_support/callbacks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="437" column="0" selection-start="14318" selection-end="14318" vertical-scroll-proportion="0.3326316">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-4.0.1/lib/active_record/querying.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.029296875" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-4.0.1/lib/active_support/hash_with_indifferent_access.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="1928" selection-end="1928" vertical-scroll-proportion="0.33203125" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-4.0.1/lib/action_controller/metal/strong_parameters.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="321" column="0" selection-start="12045" selection-end="12045" vertical-scroll-proportion="0.33203125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="6" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.76844263" />
@@ -611,16 +474,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="6" selection-start="3944" selection-end="3944" vertical-scroll-proportion="0.0">
+        <state line="36" column="40" selection-start="797" selection-end="797" vertical-scroll-proportion="0.43240094">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-4.0.1/lib/active_record/attribute_methods/read.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="40" selection-start="693" selection-end="693" vertical-scroll-proportion="1.25">
+        <state line="29" column="0" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.3327338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-4.0.1/lib/active_support/per_thread_registry.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.5193929">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-4.0.1/lib/active_record/relation/delegation.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.3322091">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-4.0.1/lib/active_record/associations/builder/association.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.33275864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/devise-3.2.2/lib/devise/controllers/helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="2105" selection-end="2105" vertical-scroll-proportion="0.3322091">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140330133504_add_placarresultado_to_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140126181423_create_games.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140402153424_add_pontos_grupo_brasil_to_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140501132733_add_nome_to_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="47" selection-start="4376" selection-end="4376" vertical-scroll-proportion="1.17">
           <folding />
         </state>
       </provider>
