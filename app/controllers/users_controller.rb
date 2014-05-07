@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :authenticate_user!, only: [:show, :edit, :update, :palpite]
+	before_filter :authenticate_user!, only: [:show, :edit, :update]
 	before_action :set_user, only: [:show, :edit, :meu_palpite]
   before_action :retorna_user, only: [:palpite, :edit_usuario, :update]
 
@@ -32,21 +32,27 @@ class UsersController < ApplicationController
   
 	def update
     respond_to do |format|
+      time = Time.now
+      if time.day <= 7 and time.month <= 5 and time.year <= 2014
         if !current_user.admin?
           params["user"]["games_attributes"].each do |jogo|
             i = 1
             if jogo[i]["score1"] == "" || jogo[i]["score2"] == ""
+              i
               format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares"}  }
             end
             i += 1
           end
         end
-      if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'Palpites atualizados com sucesso' }
-        format.json { head :no_content }
+        if @user.update(user_params)
+          format.html { redirect_to users_path, notice: 'Palpites atualizados com sucesso' }
+          format.json { head :no_content }
+        else
+          format.html { render action: 'edit' }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to edit_user_path(current_user), flash: {alert: "Ja passou da data limite de modificacao"}  }
       end
     end
   end

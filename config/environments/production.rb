@@ -92,7 +92,7 @@ BolaoOficial::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
 
-  config.action_mailer.default_url_options = {:host => 'http://fathomless-taiga-2123.herokuapp.com/'}
+  config.action_mailer.default_url_options = {:host => 'http://bolao2014.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
