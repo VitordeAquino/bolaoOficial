@@ -2,7 +2,7 @@
 	<%= f.error_notification %>
   <% $contador = 1 %>
 
-  <table class="table table-striped" >
+  <table class="table table-condensed" >
   	<%= f.fields_for :games do |builder| %>
 	  	<%= render "game_fields", :f => builder %>
   	<% end %>
