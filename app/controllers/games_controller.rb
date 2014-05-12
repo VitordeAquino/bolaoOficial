@@ -138,7 +138,7 @@ class GamesController < ApplicationController
         if current_user.admin?
           atualizar_pontos(@game.numeroDoJogo)
         end
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to @game, notice: 'O jogo foi atualizado com sucesso' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
