@@ -12,8 +12,10 @@
   <%= @pin.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+<% if current_user == @pin.user %>
+	<%= link_to 'Edit', edit_pin_path(@pin) %> 
+	<%= link_to 'Back', pins_path %>
+<% end %>
 </div>
 </div>
 </div>
