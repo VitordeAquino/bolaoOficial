@@ -8,7 +8,7 @@
 
 User.create(email: "admin@gmail.com", nome: "admin", password: "12345678", password_confirmation: "12345678", admin: true)
 
-=begin
+
 Game.create(time1: "Brasil", time2: "Croacia", user_id: 1, numeroDoJogo: 1)
 Game.create(time1: "Mexico", time2: "Camaroes", user_id: 1, numeroDoJogo: 2)
 Game.create(time1: "Brasil", time2: "Mexico", user_id: 1, numeroDoJogo: 3)
@@ -64,4 +64,4 @@ Game.create(time1: "Belgica", time2: "Russia", user_id: 1, numeroDoJogo: 45)
 Game.create(time1: "Coreia do Sul", time2: "Argelia", user_id: 1, numeroDoJogo: 46)
 Game.create(time1: "Argelia", time2: "Russia", user_id: 1, numeroDoJogo: 47)
 Game.create(time1: "Coreia do Sul", time2: "Belgica", user_id: 1, numeroDoJogo: 48)
-=end
+
