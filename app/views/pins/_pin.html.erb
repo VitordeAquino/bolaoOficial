@@ -1,3 +1,17 @@
+<% if current_user.admin? %>
+	<% @pins.each do |pin| %>
+		<div class="box">
+			<%= link_to (image_tag pin.image.url(:medium)), pin %>
+
+			<p class="description">
+			<%= pin.descricao %></p>
+
+			<p> <strong> Posted by <%= pin.user.email %> </strong> </p>
+
+		</div>
+	<% end %>
+
+<% else %>
 <div class="box">
 	<%= link_to (image_tag current_user.pins.first.image.url(:medium)), pin %>
 	<p class="description">
@@ -14,6 +28,10 @@
 		</p>
 	<% end %>
 </div>
+<% end %>
+
+
+
 
 
 
