@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
   def usuarios_cadastrados
-    @users = User.all.where(admin: false)
+    @users = User.all.where(admin: false).order(:id)
   end
 
 	def show
@@ -16,18 +16,18 @@ class UsersController < ApplicationController
 
 
 	def edit
-    @games = @user.games
+    @games = @user.games.order(:id)
 	end
 
   def edit_usuario
   end
 
   def meu_palpite
-    @games = @user.games
+    @games = @user.games.order(:id)
   end
 
   def palpite
-    @games = @user.games 
+    @games = @user.games.order(:id) 
   end
   
 	def update
