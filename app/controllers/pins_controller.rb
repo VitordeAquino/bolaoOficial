@@ -6,9 +6,9 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     if current_user.admin?
-      @pins = Pin.all.order(:id)
+      @pins = Pin.all
     else
-      @pins = current_user.pins.all.order(:id)
+      @pins = current_user.pins.all
     end
   end
 
