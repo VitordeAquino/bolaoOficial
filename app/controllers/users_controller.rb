@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
       time = Time.now
-      if time.day <= 11 and time.month <= 6 and time.year <= 2014
+      if time.month <= 11 or time.month <= 6
         if !current_user.admin?
           params["user"]["games_attributes"].each do |jogo|
             i = 1
