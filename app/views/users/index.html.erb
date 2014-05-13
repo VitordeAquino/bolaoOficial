@@ -11,7 +11,7 @@
                   <td>Pontos</td>
                   <% @users.each do |user| %>
                     <tr>
-                      <td><%= link_to user.email, palpite_path(:id => user.id) %></td>
+                      <td><%= link_to user.nome, palpite_path(:id => user.id) %></td>
                       <td><%= user.pontos%></td>
                     </tr>
                   <% end %>
