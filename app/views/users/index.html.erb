@@ -24,7 +24,7 @@
           <table class="table table-condensed" >
              <h2 style="font-family:arial; color:#231e5b" align="center">Tabela Oficial<h2>
               <% contador_admin = 1%>
-              <% User.find_by_id(1).games.reverse.each do |game| %>
+              <% User.find_by_id(1).games.order(:id).each do |game| %>
                 <% if contador_admin == 1 || contador_admin == 7 || contador_admin == 13 || contador_admin == 19 || contador_admin == 25 || contador_admin == 31 || contador_admin == 37 || contador_admin == 43 %>
                   <tr>
                         <td width=400px></td>
