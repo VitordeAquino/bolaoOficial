@@ -133,13 +133,14 @@ class GamesController < ApplicationController
     if @game.modificado?
       desfazer_update(@game.numeroDoJogo)
     end
-    @game.modificado = true
+    
     respond_to do |format|
 
       if @game.update(game_params)
         if current_user.admin?
           atualizar_pontos(@game.numeroDoJogo)
         end
+        @game.modificado = true
         format.html { redirect_to @game, notice: 'O jogo foi atualizado com sucesso' }
         format.json { head :no_content }
       else
