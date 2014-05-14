@@ -141,6 +141,7 @@ class GamesController < ApplicationController
           atualizar_pontos(@game.numeroDoJogo)
         end
         @game.modificado = true
+        @game.save
         format.html { redirect_to @game, notice: 'O jogo foi atualizado com sucesso' }
         format.json { head :no_content }
       else
