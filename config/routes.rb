@@ -11,6 +11,7 @@ BolaoOficial::Application.routes.draw do
   get 'meu_palpite', to: 'users#meu_palpite'
   get 'usuarios_cadastrados', to: 'users#usuarios_cadastrados'
   get 'edit_usuario', to: 'users#edit_usuario'
+  get 'regras', to: 'users#regra'
 
   root :to => "users#index"
   # The priority is based upon order of creation: first created -> highest priority.

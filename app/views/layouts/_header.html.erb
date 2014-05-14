@@ -6,7 +6,7 @@
       <ul class="nav navbar-nav">
         <a class="navbar-brand" href="#">Bolão da Copa 2014</a>
         <li><%= link_to "Home", root_path %></a></li>
-        <li><%= link_to "Regras", root_path %></a></li>
+        <li><%= link_to "Regras", regras_path %></a></li>
         <% if current_user %>
           <li><%= link_to "Meu Perfil", edit_user_registration_path %></li>
           <% if current_user.admin? %><li>
