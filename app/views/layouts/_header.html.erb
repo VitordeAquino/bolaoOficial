@@ -15,7 +15,6 @@
             <li><%= link_to "Usuarios Cadastrados", usuarios_cadastrados_path%></li>
           <% else %>
             <li><%= link_to 'Meus Jogos', edit_user_path(current_user) %></li>
-            <li><%= link_to "Comprovante", pins_path%></li>
           <% end %>
         <% end %>
       </ul>

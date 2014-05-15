@@ -39,7 +39,7 @@ class UsersController < ApplicationController
             i = 1
             if jogo[i]["score1"] == "" || jogo[i]["score2"] == ""
               i
-              format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares"}  }
+              format.html { redirect_to edit_user_path(current_user), flash: {alert: "Preencha todos os placares."}   }
             end
             i += 1
           end
@@ -63,6 +63,9 @@ class UsersController < ApplicationController
 
   def retorna_user
     @user = User.find(params[:id])
+  end
+
+  def regra
   end
 
   def user_params
