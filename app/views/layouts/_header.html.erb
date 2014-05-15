@@ -22,7 +22,7 @@
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
           <li ><%= link_to current_user.nome %></li>
-          <li><%= link_to "Add Comprovante", new_pin_path %></li>
+          <li><%= link_to "Enviar Comprovante", new_pin_path %></li>
           <li ><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
