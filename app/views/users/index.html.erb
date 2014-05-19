@@ -110,7 +110,8 @@
       <div class="jumbotron">
         <div align="center">
         <% @quantidade = User.all.where(admin: false, pago: true).count %>
-        <font size="4" face="Verdana" color="yellow" >Já somos</font> </br> <font size="6" face="Verdana" color="yellow" ><%= @quantidade%></font></br> <font size="4" face="Verdana" color="yellow">apostadores!</font> <br/>
+        <font size="6" face="Verdana" color="yellow" ><%= @quantidade%></font> <font size="4" face="Verdana" color="yellow">apostadores</font> <br/>
+        <font size="4" face="Verdana" color="yellow" >Já fizeram o pagamento</font> </br>
         <br/>
         <font size="5" face="Verdana" color="yellow">Prêmios:</font>
         <br/> 
