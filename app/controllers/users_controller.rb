@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
   def usuarios_cadastrados
-    @users = User.all.where(admin: false).order(:id)
+    @users = User.all.where(admin: false, pago: false).order(:id)
   end
 
 	def show
