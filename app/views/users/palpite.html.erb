@@ -1,3 +1,5 @@
+<h3>Palpites do usuário: <%= User.find_by_id(@games.first.user_id).nome %></h3>
+
 <% contador_admin = 1 %> 
 <table class="table table-striped" >
 <% @games.each do |game| %>
