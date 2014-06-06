@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def palpite
-    @games = @user.games 
+    @games = @user.games.order(id: :asc) 
   end
   
 	def update
