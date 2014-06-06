@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
 
 	def edit
-    @games = @user.games.order(:id)
+    @games = @user.games
 	end
 
   def edit_usuario
