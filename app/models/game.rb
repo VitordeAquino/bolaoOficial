@@ -1,4 +1,4 @@
 class Game < ActiveRecord::Base
-	belongs_to :user, :order => "id DESC"
+	belongs_to :user
 
 end

@@ -3,7 +3,7 @@
   <% $contador = 1 %>
 
   <table class="table table-condensed" >
-  	<%= f.fields_for :games do |builder| %>
+  	<%= f.fields_for :games , f.object.games.order(:id) do |builder| %>
 	  	<%= render "game_fields", :f => builder %>
   	<% end %>
   </table>
