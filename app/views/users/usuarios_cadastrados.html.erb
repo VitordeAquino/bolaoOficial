@@ -2,11 +2,13 @@
 
 <table>
   <tbody>
-    <table>
+    <table class="table table-condensed">
           <td>Nome</td>
+          <td>Email</td>
      <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.email, edit_usuario_path(:id => user.id) %></td>
+          <td><%= link_to user.nome, edit_usuario_path(:id => user.id) %></td>
+          <td><%= user.email %></td>
         </tr>
       <% end %>
     </table>
