@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   before_action :retorna_user, only: [:palpite, :edit_usuario, :update]
 
 	def index
-		@users = User.all.where(admin: false).order(placar: :desc, resultado: :desc, pontosGrupoBrasil: :desc)
+		@users = User.all.where(admin: false, pago: true).order(placar: :desc, resultado: :desc, pontosGrupoBrasil: :desc)
 	end
 
   def usuarios_cadastrados
-    @users = User.all.where(admin: false, pago: false).order(:id)
+    @users = User.all.where(admin: false).order(:id)
   end
 
 	def show
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 	def update
     respond_to do |format|
       time = Time.now
-      if time.month <= 11 or time.month <= 6
+      if time.day <= 11 and time.month <= 6
         if !current_user.admin?
           params["user"]["games_attributes"].each do |jogo|
             i = 1

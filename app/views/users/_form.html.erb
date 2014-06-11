@@ -9,11 +9,10 @@
   </table>
 
   <div class="form-actions">
-    <% if @user.games.first.score1 == nil %>
-      <%= f.button :submit,"Salvar", class: "btn btn-primary btn-large" %> (verifique se todos os jogos estão preenchidos)
-    <% else %>
+    <% time = Time.now %>
+      <% if time.day <= 11 and time.month <= 6 %>
       <%= f.button :submit,"Atualizar Jogos", class: "btn btn-primary btn-large" %> (verifique se todos os jogos estão preenchidos)
-    <% end %>  
+      <% end %>  
   </div>
 
 
