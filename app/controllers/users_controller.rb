@@ -32,8 +32,6 @@ class UsersController < ApplicationController
   
 	def update
     respond_to do |format|
-      time = Time.now
-      if time.day <= 11 and time.month <= 6
         if !current_user.admin?
           params["user"]["games_attributes"].each do |jogo|
             i = 1
@@ -51,9 +49,7 @@ class UsersController < ApplicationController
           format.html { render action: 'edit' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
-      else
-        format.html { redirect_to edit_user_path(current_user), flash: {alert: "Ja passou da data limite de modificacao"}  }
-      end
+      
     end
   end
 
