@@ -7,10 +7,10 @@
 	  	<%= render "game_fields", :f => builder %>
   	<% end %>
   </table>
-
-<!--   <div class="form-actions">
+  <% if current_user.id == 46%>
+	<div class="form-actions">
       <%= f.button :submit,"Atualizar Jogos", class: "btn btn-primary btn-large" %> (verifique se todos os jogos estão preenchidos)
-  </div> -->
-
+  	</div>
+  <% end%>
 
 <% end %>
