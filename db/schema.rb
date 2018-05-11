@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140501132733) do
 
-  create_table "games", force: true do |t|
+  create_table "games", force: :cascade do |t|
     t.integer  "score1"
     t.integer  "score2"
     t.integer  "numeroDoJogo"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140501132733) do
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
 
-  create_table "pins", force: true do |t|
+  create_table "pins", force: :cascade do |t|
     t.string   "descricao"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140501132733) do
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
